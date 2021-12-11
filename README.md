@@ -14,7 +14,7 @@ This Case Study was completed as part of the Google Data Analytics Professional 
 
 3) Process Phase
 
-   After regularising and importing the data, the first step was to inspect each attribute for anomalies. A new column for trip length (in minutes) was created. Any data I was        uncertain about was marked for exclusion from the final dataset. A full description of the process is described here: google_cyclistic_divvy_bikes.sql
+   After regularising and importing the data, the first step was to inspect each attribute for anomalies. A new column for trip length (in minutes) was created.  A full              description of the process is described here: google_cyclistic_divvy_bikes.sql
 
 4) Analyse Phase
 
