@@ -1,0 +1,15 @@
+
+You are working for Cyclistic, a bike-sharing company. Bikes can be unlocked from one station and returned to any other station in the system anytime.
+
+Cyclistic has flexible pricing plans: single-ride passes, full-day passes, and annual memberships. Customers who purchase single-ride or full-day passes are referred 
+to as casual riders. Customers who purchase annual memberships are Cyclistic members.
+
+Director of marketing believes the company’s future success depends on maximizing the number of annual memberships as finance analysts have concluded that annual 
+memberships are much more profitable than casual riders. She also believes that there is a good chance of converting casual riders to members as they are already 
+aware of Cyclistic program and have chosen it for their mobility needs.
+
+
+Business Task-
+
+To analyze user behaviours on how annual members and casual riders use Cyclistic bikes differently to make 
+recommendations on how to convert casual riders into annual members.
