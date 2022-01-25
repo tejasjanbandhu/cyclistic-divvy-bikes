@@ -7,20 +7,12 @@ It uses the data from Divvy Bikes (https://www.divvybikes.com/system-data).
 
 The database used is Oracle Database 18c Express Edition.
 
-The steps followed:
 
-1. Download the individual CSV documents
-2. Import each into separate tables, regularising data types
-3. Combine all the data into one table
-4. Inspect data for anomalies
-5. Identify and exclude data with anomalies
-6. Create queries for data visualisations
-
-The code below starts at step 3.
-
+The data has been inspected for anomalies after loading the data in oracle database.
+The anomalies had been excluded .
 */
 
-----Step 3: Combine all the data into one table---------------------------------
+---- Combine all the data into one table---------------------------------
 
 
 drop table divvy_tripdata;
@@ -91,7 +83,7 @@ update divvy_tripdata
 set trip_length_mins = round((ended_at - started_at) * 1440);
 
 
-----Step 4: Inspect data for anomalies------------------------------------------
+---- Inspect data for anomalies------------------------------------------
 
 select distinct member_casual
 from divvy_tripdata;
@@ -140,7 +132,7 @@ from divvy_tripdata
 where exclude is null
 and rideable_type is null;
 
-----Step 5: Identify and exclude data with anomalies----------------------------
+---- Identify and exclude data with anomalies----------------------------
 
 
 --exclude cases where start time is greater than end time
@@ -204,7 +196,7 @@ where exclude is null
 and (upper(start_station_name) like '%BASE%WAREHOUSE%' or upper(end_station_name) like '%BASE%WAREHOUSE%');
 
 
-----Step 6: Create queries for data visualisations------------------------------
+---- Create queries for data visualisations------------------------------
 
 select count(1)
 from divvy_tripdata
