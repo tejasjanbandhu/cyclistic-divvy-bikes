@@ -241,7 +241,16 @@ with dt as (select rownum id, rideable_type, started_at, ended_at, start_station
             
     select member_casual, count(id)
     from dt
-    where trip_length_mins >= 60 and trip_length_mins <= 119
+    where trip_length_mins <= 1440
+    group by member_casual;
+    
+    with dt as (select rownum id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual, trip_length_mins
+            from divvy_tripdata
+            where exclude is null) 
+            
+    select member_casual, count(id)
+    from dt
+    where trip_length_mins > 1440
     group by member_casual;
     
 ----------------
