@@ -256,22 +256,7 @@ with dt as (select rownum id, rideable_type, started_at, ended_at, start_station
 ----------------
 
 
-with dt as (select rownum id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual, trip_length_mins
-            from divvy_tripdata
-            where exclude is null) 
-            
-    select *
-    from 
-    (
-        select 'Origin' origin_destination, start_station_name station_name, id path_id, start_lat lat, start_lng lng, member_casual
-        from dt
-        
-        union
-        
-        select 'Destination' origin_destination, end_station_name station_name, id path_id, end_lat lat, end_lng lng, member_casual
-        from dt
-    )
-    order by path_id;
+
     
     
 with dt as (select rownum id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual, trip_length_mins
@@ -288,19 +273,10 @@ with dt as (select rownum id, rideable_type, started_at, ended_at, start_station
             ) 
     ) i
     where num_rank <= 30;
---    order by num_rank
+    order by num_rank
   
---  fetch first 100 rows only
-  
-set define off;
 
-with dt as (select rownum id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual, trip_length_mins
-            from divvy_tripdata
-            where exclude is null) 
-            
-    select distinct round(start_lat, 2), round(start_lng, 2)
-    from dt
-    where start_station_name = 'Streeter Dr & Grand Ave';
+  
     
 with dt as (select rownum id, rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual, trip_length_mins
             from divvy_tripdata
